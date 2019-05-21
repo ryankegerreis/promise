@@ -3,9 +3,9 @@ import React, { Component, Fragment } from 'react'
 export default class UserDash extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         User Dashboard Test
-      </div>
+      </Fragment>
     )
   }
 }

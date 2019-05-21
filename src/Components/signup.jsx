@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 
-export default class Signup extends Component {
+export default class SignUp extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         Signup Test
-      </div>
+      </Fragment>
     )
   }
 }

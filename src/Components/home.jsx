@@ -3,9 +3,9 @@ import React, { Component, Fragment } from 'react'
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         Home Test
-      </div>
+      </Fragment>
     )
   }
 }

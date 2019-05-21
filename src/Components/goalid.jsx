@@ -3,9 +3,9 @@ import React, { Component, Fragment } from 'react'
 export default class GoalID extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         Goal ID Test
-      </div>
+      </Fragment>
     )
   }
 }
