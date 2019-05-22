@@ -1,9 +1,12 @@
 const express = require('express');
-const router  = express.Router();
+const { isLoggedIn } = require('../middlewares')
+const router = express.Router();
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+router.get('/secret', isLoggedIn, (req, res, next) => {
+  res.json({
+    secret: 42,
+    user: req.user
+  });
 });
 
 module.exports = router;
