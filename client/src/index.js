@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'bulma/css/bulma.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import './index.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App.jsx';

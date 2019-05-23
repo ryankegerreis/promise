@@ -1,6 +1,6 @@
 // --------------------
 // Definition of variables
-$primary: #32c3ff;
+$primary: #32c3ff; 
 
 
 // ----------------------------------------
@@ -21,7 +21,7 @@ $primary: #32c3ff;
 // Style reusable for all components
 body {
   margin: 0;
-  padding: 0;
+  padding:60px 0px 0px;
   font-family: sans-serif;
 }
 
@@ -39,56 +39,24 @@ body {
 }
 
 // --------------------
-// Style for App component
-.App {
-  text-align: center;
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-  }
-
-  .App-header {
-    background-color: $primary;
-    padding: 20px;
-    color: white;
-
-    a {
-      color: white;
-      padding: 0 5px;
-      text-decoration: unset;
-    }
-
-    a.active {
-      font-weight: bold;
-    }
-  }
-
-  .App-title {
-    font-size: 1.5em;
-  }
-
-  .App-intro {
-    font-size: large;
-  }
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-// --------------------
 // Style for Home component
 .Home {
   p {
     font-size: 1.2em;
   }
+}
+
+.home-bg {
+  background-image: url("./images/sunrise.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+
+// --------------------
+// Style for Nav component
+.nav-fix{
+  position: fixed;
 }
 
 // --------------------
@@ -99,3 +67,4 @@ body {
     color: $primary;
   }
 }
+

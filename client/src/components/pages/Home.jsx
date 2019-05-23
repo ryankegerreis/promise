@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react'
 
 export default class Home extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //   }
-  // }
-  render() {                
+  render() {
     return (
-      <div className="Home">
-        <h2>Home</h2>
-        <p>This is a sample project with the MERN stack</p>
-      </div>
-    );
+      <Fragment>
+        <div className="home-bg">
+          Home Test
+
+        </div>
+
+      </Fragment>
+    )
   }
 }

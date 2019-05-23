@@ -1,23 +1,27 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const countrySchema = new mongoose.Schema({
+const GoalSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'The country name is required'],
-    minlength: 1
-  },
-  capitals: {
-    type: [String],
-    default: []
-  },
-  area: {
-    type: Number,
+    required: [true, 'A goal name is required'],
+    minlength: 4
   },
   description: {
     type: String,
+    default: []
+  },
+  owner: {
+    type: Schema.Types.ObjectId
+  },
+  partner: {
+    type: String,
+  },
+  dueDate: {
+    type: Date,
   },
 });
 
-const Country = mongoose.model('Country', countrySchema);
+const Goal = mongoose.model('Goal', GoalSchema);
 
-module.exports = Country;
+module.exports = Goal;
