@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
-
+import Axios from 'axios';
+Axios.defaults.withCredentials = true;
 
 export default class AddCountry extends Component {
   constructor(props) {

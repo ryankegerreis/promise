@@ -9,15 +9,16 @@ const GoalSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    default: []
+    default: ''
   },
-  owner: {
-    type: Schema.Types.ObjectId
-  },
+  owner: Schema.Types.ObjectId,
+  //  {
+  //   type: 
+  // },
   partner: {
     type: String,
   },
-  dueDate: {
+  date: {
     type: Date,
   },
 });
