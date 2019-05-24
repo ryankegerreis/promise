@@ -30,7 +30,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Login page container">
         <h2>Login</h2>
         <form>
           Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} /> <br />
