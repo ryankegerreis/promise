@@ -40,18 +40,34 @@ export default class NewGoal extends Component {
 
   render() {
     return (
-      <div className="AddGoal">
-        <h2>Add a new goal</h2>
-        <form>
-          Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} /> <br />
-          Partner: <input type="text" value={this.state.partner} name="partner" onChange={this.handleInputChange} /> <br />
-          Due Date: <input type="date" value={this.state.date} name="date" onChange={this.handleInputChange} /> <br />
-          Description: <textarea value={this.state.description} name="description" cols="30" rows="10" onChange={this.handleInputChange} ></textarea> <br />
-          <button onClick={(e) => this.handleClick(e)}>Add A Goal</button>
-        </form>
-        {this.state.message && <div className="info">
-          {this.state.message}
-        </div>}
+      <div className="page">
+        <div className='new-center home-text'>
+          <h2>Make A New Promise</h2>
+          <form>
+            <div>
+              Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <div>
+              Partner: <input type="text" value={this.state.partner} name="partner" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <div>
+              Due Date: <input type="date" value={this.state.date} name="date" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <div>
+              Description: <textarea value={this.state.description} name="description" cols="30" rows="10" onChange={this.handleInputChange} ></textarea>
+            </div>
+            <br />
+            <div>
+              <button className='button' id='button5' onClick={(e) => this.handleClick(e)}>Add A Goal</button>
+            </div>
+          </form>
+          {this.state.message && <div className="info">
+            {this.state.message}
+          </div>}
+        </div>
       </div>
     );
   }

@@ -25,12 +25,24 @@ export default class MyGoals extends Component {
   render() {
     return (
       <Fragment>
-        <div>
+        <div className='page'>
           {/* Style with bootstrap cards */}
           <h2>My Goals</h2>
-          {this.state.goals.map((aGoal, i) => <li key={aGoal._id}>{aGoal.name} {aGoal.partner} {aGoal.date} {aGoal.description}<button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button></li>)}
-        </div>
-      </Fragment>
+          <div className='card-deck'>
+            <div className='card'>
+              <div className='card-body'>
+                {this.state.goals.map((aGoal, i) => <div key={aGoal._id}>
+                  <div className='card-title'>{aGoal.name}</div>
+                  <div className='card-subtitle'>{aGoal.partner}</div>
+                  <div className='card-text'>{aGoal.description}</div>
+                  <div className='card-text'>{aGoal.date}</div>
+                  <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button>
+                </div>)}
+              </div>
+            </div>
+          </div>
+        </div >
+      </Fragment >
     );
   }
   componentDidMount() {

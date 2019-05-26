@@ -36,17 +36,28 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup">
-        <h2>Signup</h2>
-        <form>
-          Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} /> <br />
-          Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} /> <br />
-          Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Signup</button>
-        </form>
-        {this.state.message && <div className="info info-danger">
-          {this.state.message}
-        </div>}
+      <div className="Signup page">
+        <div className='signup-box home-text'>
+          <h2 className='align-stuff'>Signup</h2>
+          <form>
+            <div className>
+              Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <div>
+              Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <div>
+              Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+            </div>
+            <br />
+            <button className='button align-stuff' id='button4' onClick={(e) => this.handleClick(e)}>Signup</button>
+          </form>
+          {this.state.message && <div className="info info-danger">
+            {this.state.message}
+          </div>}
+        </div>
       </div>
     );
   }

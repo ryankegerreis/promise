@@ -30,17 +30,29 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login page container">
-        <h2>Login</h2>
-        <form>
-          Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} /> <br />
-          Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
-        </form>
-        {this.state.message && <div className="info info-danger">
-          {this.state.message}
-        </div>}
-      </div>
+      <div className="page login-bg">
+        <div className='center'>
+          <div className='login-box'>
+            <h2 className='home-text'>Login</h2>
+            <form>
+              <div className='home-text'>
+                Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+              </div>
+              <br />
+              <div>
+                <div className='home-text'>
+                  Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                </div>
+                <br />
+                <button className='button' id='button3' onClick={(e) => this.handleClick(e)}>Login</button>
+              </div>
+            </form>
+            {this.state.message && <div className="info info-danger">
+              {this.state.message}
+            </div>}
+          </div>
+        </div>
+      </div >
     );
   }
 }
