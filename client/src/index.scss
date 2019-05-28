@@ -138,7 +138,7 @@ color:white;
 .login-box{
   background-color: #2196F3;
   border-radius: 20px;
-text-align: center;
+  text-align: center;
 }
 
 input[type=text] {
@@ -259,7 +259,7 @@ textarea {
 //Animations
 span:before{
 content:'Yourself';
-animation:animate infinite 20s;
+animation:animate infinite 15s;
 width:100%;
 }
 
