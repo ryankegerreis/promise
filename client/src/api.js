@@ -65,7 +65,21 @@ export default {
   // api.getCountries().then(countries => { /* ... */ })
   getGoals() {
     return service
+      .get('/goals')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  getMyGoals() {
+    return service
       .get('/mygoals')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  getTheGoal(id) {
+    return service
+      .get('/goaldetails/:id')
       .then(res => res.data)
       .catch(errHandler)
   },

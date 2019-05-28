@@ -14,12 +14,12 @@ import NewGoal from './pages/NewGoal'
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      countries: []
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     countries: []
+  //   }
+  // }
 
   handleLogoutClick(e) {
     api.logout()
@@ -49,7 +49,7 @@ export default class App extends Component {
           <Route path="/browse" component={Browse} />
           <Route path="/mygoals" component={MyGoals} />
           <Route path="/newgoal" component={NewGoal} />
-          <Route path="/goalid" component={GoalID} />
+          <Route path="/goaldetails/:id" component={GoalID} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>

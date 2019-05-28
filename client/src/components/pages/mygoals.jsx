@@ -9,7 +9,16 @@ export default class MyGoals extends Component {
       goals: []
     }
   }
-
+  componentDidMount() {
+    api.getMyGoals()
+      .then(goalzz => {
+        console.log(goalzz)
+        this.setState({
+          goals: goalzz
+        })
+      })
+      .catch(err => console.log(err))
+  }
 
   deleteGoal = (id, i) => {
     console.log(id)
@@ -45,14 +54,5 @@ export default class MyGoals extends Component {
       </Fragment >
     );
   }
-  componentDidMount() {
-    api.getGoals()
-      .then(goalzz => {
-        console.log(goalzz)
-        this.setState({
-          goals: goalzz
-        })
-      })
-      .catch(err => console.log(err))
-  }
+
 }
