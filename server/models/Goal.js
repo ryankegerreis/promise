@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 const GoalSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'A goal name is required'],
+    //required: [true, 'A goal name is required'],
     minlength: 4
   },
   description: {
     type: String,
     default: ''
   },
-  owner: Schema.Types.ObjectId,
+  // owner: Schema.Types.ObjectId,
   //  {
   //   type: 
   // },

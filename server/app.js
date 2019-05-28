@@ -67,7 +67,7 @@ app.get('*', (req, res) => {
 // Error handler
 app.use((err, req, res, next) => {
   console.error("----- An error happened -----")
-  console.error(err)
+  //  console.error(err)
 
   // only render if the error ocurred before sending the response
   if (!res.headersSent) {

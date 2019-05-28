@@ -38,7 +38,7 @@ export default class Signup extends Component {
     return (
       <div className="Signup page">
         <div className='signup-box home-text'>
-          <h2 className='align-stuff'>Signup</h2>
+          <h2 className='align-stuff'>Sign Up</h2>
           <form>
             <div className>
               Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />

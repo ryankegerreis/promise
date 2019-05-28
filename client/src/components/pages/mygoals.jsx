@@ -20,6 +20,19 @@ export default class MyGoals extends Component {
       .catch(err => console.log(err))
   }
 
+  showTheGoals = () => {
+    return this.state.goals.map((aGoal, i) => {
+      return <div key={aGoal._id} className='card'>
+        {/* <img src={aGoal.image_url} className='card-img-top img-fit' /> */}
+        <h3 className='card-title'>{aGoal.name}</h3>
+        <h4 className='card-subtitle'>Partnered with: {aGoal.partner}</h4>
+        <h5 className='card-text'>Description: {aGoal.description}</h5>
+        <h6 className='card-text'>Date Created: {aGoal.date}</h6>
+        <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button>
+      </div>
+    })
+  }
+
   deleteGoal = (id, i) => {
     console.log(id)
     Axios.post('http://localhost:5000/api/mygoals/deleteGoal', { id: id }).then(responseFromServer => {
@@ -34,23 +47,10 @@ export default class MyGoals extends Component {
   render() {
     return (
       <Fragment>
-        <div className='page'>
-          {/* Style with bootstrap cards */}
-          <h2>My Goals</h2>
-          <div className='card-deck'>
-            <div className='card'>
-              <div className='card-body'>
-                {this.state.goals.map((aGoal, i) => <div key={aGoal._id}>
-                  <div className='card-title'>{aGoal.name}</div>
-                  <div className='card-subtitle'>{aGoal.partner}</div>
-                  <div className='card-text'>{aGoal.description}</div>
-                  <div className='card-text'>{aGoal.date}</div>
-                  <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button>
-                </div>)}
-              </div>
-            </div>
-          </div>
-        </div >
+        <h2>My Goals</h2>
+        <div className='card-deck'>
+          {this.showTheGoals()}
+        </div>
       </Fragment >
     );
   }

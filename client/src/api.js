@@ -78,8 +78,9 @@ export default {
   },
 
   getTheGoal(id) {
+    console.log('get the goal')
     return service
-      .get('/goaldetails/:id')
+      .get(`/goaldetails/${id}`)
       .then(res => res.data)
       .catch(errHandler)
   },

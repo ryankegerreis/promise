@@ -23,13 +23,9 @@ router.get('/mygoals', isLoggedIn, (req, res, next) => {
 
 //Route to get the goal by id
 router.get('/goaldetails/:id', isLoggedIn, (req, res, next) => {
-  console.log('req.params.id')
-  console.log(req.query)
-
-  Goal.findById({ id: req.params.id })
+  Goal.findById(req.params.id)
     .then(goal => {
       res.json(goal);
-      console.log('Goal is', goal)
     })
     .catch(err => next(err))
 });
