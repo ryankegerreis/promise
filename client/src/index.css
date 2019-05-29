@@ -1,24 +1,4 @@
-// --------------------
-// Definition of variables
-$primary: #32c3ff; 
 
-
-// ----------------------------------------
-// To install Boostrap:
-// 1) Run in the client folder: $ npm i bootstrap
-// 2) Import bootstrap with the following line
-// @import '../node_modules/bootstrap/scss/bootstrap.scss';
-// 
-// To install Reactstrap:
-// 1) Run in the client folder: $ npm i reactstrap
-// 2) Go to the official documentation and take some examples: https://reactstrap.github.io/
-// import { Button } from 'reactstrap';
-// <Button color="danger">Danger!</Button>
-// ----------------------------------------
-
-
-// --------------------
-// Style reusable for all components
 body {
   margin: 0;
   padding:60px 0px 0px;
@@ -70,15 +50,9 @@ body {
     height:100vh;
     flex-flow: row wrap;
     }
-// --------------------
 
-
-// --------------------
-// Style for Home component
 .Home {
-  p {
-    font-size: 1.2em;
-  }
+
 }
 
 .home-center {
@@ -93,11 +67,9 @@ body {
 }
 
 .home-bg {
-  // background-image: url("./images/pattern.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height:100vh;
-  // background-color:#BBDEFB;
 }
 
 
@@ -117,8 +89,6 @@ body {
 color:white;
 }
 
-// --------------------
-// Style for Nav component
 .nav-fix{
   position: fixed;
   background-color:#2196F3;
@@ -130,11 +100,9 @@ color:white;
 }
 
 .nav-text:hover {
-  // background-color: white; /* Green */
   color: #FF5722;
 }
 
-//Style for Login Page
 .login-box{
   background-color: #2196F3;
   border-radius: 20px;
@@ -180,14 +148,11 @@ margin:2%
 }
 
 .login-bg{
-  // background-image: url("./images/pattern.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height:100vh;
-  // background-color:#BBDEFB;
 }
 
-//Style for Sign Up Page
 
 .signup-box{
   top:40%;
@@ -212,12 +177,10 @@ margin:2%
 }
 
 
-//Style for My Promises
 .card-bg{
   background-color:#00B3B3;
 }
 
-//Style for New Promise Page
 .new-center{
   top:20%;
   margin: auto;
@@ -247,16 +210,8 @@ textarea {
   margin-left:40%;
 }
 
-// --------------------
-// Style for Secret component
-.Secret {
-  .result {
-    font-size: 1.2em;
-    color: $primary;
-  }
-}
 
-//Animations
+
 span:before{
 content:'Yourself';
 animation:animate infinite 15s;
