@@ -65,7 +65,6 @@ router.delete('/deletegoal/:id', isLoggedIn, (req, res, next) => {
 });
 
 router.post('/savecomment/:goalId', isLoggedIn, (req, res, next) => {
-  console.log('zebra')
   let comment = req.body;
   comment.poster = req.user.username;
   comment.owner = req.user._id;
@@ -77,10 +76,8 @@ router.post('/savecomment/:goalId', isLoggedIn, (req, res, next) => {
 
 //Get Comments
 router.get('/getcomment/:id', isLoggedIn, (req, res, next) => {
-  console.log(1111, req.params.id)
   Comment.find({ goalId: req.params.id })
     .then(comments => {
-      console.log(1232123, comments)
       res.json({ comments });
     })
     .catch(err => next(err))

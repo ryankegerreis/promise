@@ -11,7 +11,7 @@ export default class Browse extends Component {
   componentDidMount() {
     api.getGoals()
       .then(goalzz => {
-        console.log(goalzz, 2452452345)
+        // console.log(goalzz, 2452452345)
         this.setState({
           goals: goalzz
         })

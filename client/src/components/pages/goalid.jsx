@@ -12,10 +12,8 @@ export default class GoalID extends Component {
     }
   }
 
-
   componentDidMount() {
     console.log(this.props.match.params.id)
-    // console.log('The Goal ID is', this.props.match.params.id)
     console.log(this)
     api.getTheGoal(this.props.match.params.id)
       .then(goalzz => {
@@ -40,12 +38,25 @@ export default class GoalID extends Component {
     )
   }
 
+  handleClick(e) {
+    e.preventDefault()
+    let theGoal = {
+      name: this.state.name,
+      partner: this.state.partner,
+      date: this.state.date,
+      description: this.state.description,
+    }
+    api.saveGoal(theGoal)
+    this.props.history.push("/mygoals") // Redirect to the home page
+  }
+
   render() {
     return (
       <Fragment>
         <div>
           {this.showAGoal()}
           <Comment {...this.props} />
+          <button>Join This Goal</button>
         </div >
       </Fragment>
     )

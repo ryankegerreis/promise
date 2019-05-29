@@ -55,6 +55,7 @@ export default {
       .catch(errHandler)
   },
 
+  //Logout
   logout() {
     localStorage.removeItem('user')
     return service
@@ -127,11 +128,19 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
-  saveGoal(theGoal){
-    return service
-    .post(`/savegoal`, theGoal)
-    .then(res => res.data)
-    .catch(errHandler)
 
+  saveGoal(theGoal) {
+    return service
+      .post(`/savegoal`, theGoal)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+
+  deleteGoal() {
+    return service
+      .delete('/deletegoal')
+      .then(res => res.data)
+      .catch(errHandler)
   }
 }

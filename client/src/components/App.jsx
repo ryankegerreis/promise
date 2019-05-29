@@ -14,15 +14,10 @@ import NewGoal from './pages/NewGoal'
 
 
 export default class App extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     countries: []
-  //   }
-  // }
 
   handleLogoutClick(e) {
     api.logout()
+
   }
 
   render() {
@@ -36,10 +31,10 @@ export default class App extends Component {
       <div className="pad-app">
         <header>
           <Nav />
-          {api.isLoggedIn() ?
-            <button onClick={this.handleLogoutClick}>Log Out</button>
-            : "show login here"
-          }
+          {/* {api.isLoggedIn() ?
+            <button onClick={this.handleLogoutClick}><a href='/'>Log Out</a></button>
+            : ""
+          } */}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
