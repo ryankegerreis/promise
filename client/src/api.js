@@ -126,6 +126,12 @@ export default {
       .get(`/getcomment/${id}`)
       .then(res => res.data)
       .catch(errHandler)
-  }
+  },
+  saveGoal(theGoal){
+    return service
+    .post(`/savegoal`, theGoal)
+    .then(res => res.data)
+    .catch(errHandler)
 
+  }
 }

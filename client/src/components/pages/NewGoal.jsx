@@ -29,9 +29,9 @@ export default class NewGoal extends Component {
       date: this.state.date,
       description: this.state.description,
     }
+    api.saveGoal(theGoal)
     this.props.history.push("/mygoals") // Redirect to the home page
-    Axios.post('http://localhost:5000/api/savegoal', theGoal).then(stuffFromServer => {
-    })
+
   }
 
   render() {
