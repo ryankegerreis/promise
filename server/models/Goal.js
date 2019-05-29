@@ -10,10 +10,7 @@ const GoalSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
-  // owner: Schema.Types.ObjectId,
-  //  {
-  //   type: 
-  // },
+  owner: Schema.Types.ObjectId,
   partner: {
     type: String,
   },
