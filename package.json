@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
   },
   "engines": {
-    "node": "10.15.3"
+    "node": "8.9.4"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
