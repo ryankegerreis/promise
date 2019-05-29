@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import api from '../../api'
+import Comment from '../modules/Comment'
 import { Link } from 'react-router-dom'
 
 export default class GoalID extends Component {
@@ -27,19 +28,27 @@ export default class GoalID extends Component {
       .catch(err => console.log(err))
   }
 
+  showAGoal = () => {
+    return (
+      <div className='card'>
+        <h3 className='card-title'>{this.state.goalzz.name}</h3>
+        <h4 className='card-subtitle'>Partnered with: {this.state.goalzz.partner}</h4>
+        <h5 className='card-text'>Description: {this.state.goalzz.description}</h5>
+        <h6 className='card-text'>Date Created: {this.state.goalzz.date}</h6>
+        {/* <button onClick={() => this.deleteGoal(aGoal._id)} className="btn btn-primary" >Delete</button> */}
+      </div>
+    )
+  }
+
+
+
 
   render() {
     return (
       <Fragment>
-        <div className='page'>
-          <h2>The Goal Details</h2>
-          <div className='card-deck'>
-            <div className='card'>
-              <div className='card-body'>
-                {this.state.goalzz.name}
-              </div>
-            </div>
-          </div>
+        <div>
+          {this.showAGoal()}
+          <Comment {...this.props} />
         </div >
       </Fragment>
     )

@@ -23,12 +23,11 @@ export default class MyGoals extends Component {
   showTheGoals = () => {
     return this.state.goals.map((aGoal, i) => {
       return <div key={aGoal._id} className='card'>
-        {/* <img src={aGoal.image_url} className='card-img-top img-fit' /> */}
         <h3 className='card-title'>{aGoal.name}</h3>
         <h4 className='card-subtitle'>Partnered with: {aGoal.partner}</h4>
         <h5 className='card-text'>Description: {aGoal.description}</h5>
         <h6 className='card-text'>Date Created: {aGoal.date}</h6>
-        <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button>
+        {/* <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button> */}
       </div>
     })
   }

@@ -13,7 +13,6 @@ export default class NewGoal extends Component {
       date: null
     }
     this.handleInputChange = this.handleInputChange.bind(this)
-
   }
 
   handleInputChange(event) {
@@ -24,7 +23,6 @@ export default class NewGoal extends Component {
 
   handleClick(e) {
     e.preventDefault()
-    // console.log(this.state.name, this.state.description)
     let theGoal = {
       name: this.state.name,
       partner: this.state.partner,
@@ -32,9 +30,7 @@ export default class NewGoal extends Component {
       description: this.state.description,
     }
     this.props.history.push("/mygoals") // Redirect to the home page
-    // console.log(theGoal)
     Axios.post('http://localhost:5000/api/savegoal', theGoal).then(stuffFromServer => {
-      // console.log(stuffFromServer)
     })
   }
 

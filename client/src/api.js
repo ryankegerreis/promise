@@ -111,4 +111,21 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+
+  createComment(comment, goalId) {
+    console.log(comment)
+    return service
+      .post(`/savecomment/${goalId}`, comment)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  getTheComments(id) {
+    console.log('got the comments')
+    return service
+      .get(`/getcomment/${id}`)
+      .then(res => res.data)
+      .catch(errHandler)
+  }
+
 }

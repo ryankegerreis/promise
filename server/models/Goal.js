@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const GoalSchema = new mongoose.Schema({
   name: {
     type: String,
-    //required: [true, 'A goal name is required'],
     minlength: 4
   },
   description: {
@@ -21,6 +20,7 @@ const GoalSchema = new mongoose.Schema({
   date: {
     type: Date,
   },
+  commentId: [{ type: Schema.Types.ObjectId, ref: "Comment" }]
 });
 
 const Goal = mongoose.model('Goal', GoalSchema);
