@@ -77,9 +77,11 @@ router.post('/savecomment/:goalId', isLoggedIn, (req, res, next) => {
 
 //Get Comments
 router.get('/getcomment/:id', isLoggedIn, (req, res, next) => {
-  Comment.find(req.params.id)
-    .then(goal => {
-      res.json(goal);
+  console.log(1111, req.params.id)
+  Comment.find({ goalId: req.params.id })
+    .then(comments => {
+      console.log(1232123, comments)
+      res.json({ comments });
     })
     .catch(err => next(err))
 });

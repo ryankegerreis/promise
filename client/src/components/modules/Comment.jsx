@@ -11,8 +11,9 @@ export default class Comment extends Component {
   componentDidMount() {
     api.getTheComments(this.props.match.params.id)
       .then(allcomments => {
+        console.log(allcomments)
         this.setState({
-          comments: allcomments
+          comments: allcomments.comments
         })
       })
       .catch(err => console.log(err))
@@ -28,6 +29,9 @@ export default class Comment extends Component {
     console.log(this)
     api.createComment(this.state, this.props.match.params.id).then(newcomment => {
       console.log(newcomment)
+      this.setState({
+        comments: [...this.state.comments, newcomment]
+      })
     })
   }
 
