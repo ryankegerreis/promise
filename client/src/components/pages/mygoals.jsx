@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import api from '../../api';
 import Browse from './Browse'
 import { Link } from 'react-router-dom';
+import moment from 'moment'
 
 export default class MyGoals extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class MyGoals extends Component {
             <h3 className='card-title caveat'>{aGoal.name}</h3>
             <h4 className='card-subtitle caveat'>Partnered with: {aGoal.partner}</h4>
             <h5 className='card-text caveat'>Description: {aGoal.description}</h5>
-            <h6 className='card-text caveat'>Due Date: {aGoal.date.slice(0, 10)}</h6>
+            <h6 className='card-text caveat'>Due Date: {moment(aGoal.date).format('MM DD YYYY')}</h6>
           </div>
         </div>
         <div className='row'>

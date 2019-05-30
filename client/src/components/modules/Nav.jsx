@@ -21,7 +21,7 @@ export default class Nav extends Component {
             <li className='nav-item p-2 marker'><Link className='nav-text' to={'/browse'}>Browse</Link></li>
             <li className='nav-item p-2 marker'><Link className='nav-text' to={'/mygoals'}>My Goals</Link></li>
             <li className='nav-item p-2 marker'><Link className='nav-text' to={'/newgoal'}>New Goal</Link></li>
-            <li className='nav-item p-2 marker'>{api.isLoggedIn() ?
+            <li className='nav-item p-2 marker' id='link-fix'>{api.isLoggedIn() ?
               <div className='nav-item p-2' onClick={this.handleLogoutClick}><Link className='nav-text' to='/'>Log Out</Link></div>
               : ""}</li>
           </ul>

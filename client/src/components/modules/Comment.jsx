@@ -37,16 +37,19 @@ export default class Comment extends Component {
 
   showComments = () => {
     return this.state.comments.map(eachComment => {
-      return <li>{eachComment.comment}</li>
+      return <p className='caveat'>{eachComment.comment}</p>
     })
   }
 
   render() {
     return (
       <div>
-        {this.showComments()}
-        <input type="text" onChange={this.setComment} />
-        <button onClick={this.addComment}>Add Comment</button>
+        <div>
+          <h3 className='marker pad'>Comments</h3>
+          {this.showComments()}
+          <input type="text" onChange={this.setComment} />
+          <button className='btn btn-primary rounded-lg marker' onClick={this.addComment}>Add Comment</button>
+        </div>
       </div>
     )
   }

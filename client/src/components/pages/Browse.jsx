@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../api'
+import moment from 'moment'
+
 export default class Browse extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +28,7 @@ export default class Browse extends Component {
             <h3 className='card-title'>{aGoal.name}</h3>
             <h4 className='card-subtitle'>Partnered with: {aGoal.partner}</h4>
             <h5 className='card-text'>Description: {aGoal.description}</h5>
-            <h6 className='card-text'>Date Created: {aGoal.date}</h6>
+            <h6 className='card-text'>Date Created: {moment(aGoal.date).format('MM DD YYYY')}</h6>
           </div>
         </div>
         <div className='row'>
