@@ -30,29 +30,63 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="page login-bg">
-        <div className='center'>
-          <div className='login-box'>
-            <h2 className='home-text'>Login</h2>
-            <form>
-              <div className='home-text'>
-                Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+      // <div className="page home-bg">
+      //   <div className='center'>
+      //     <div className='login-box'>
+      //       <h2 className='home-text'>Login</h2>
+      //       <form>
+      //         <div className='home-text'>
+      //           Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+      //         </div>
+      //         <br />
+      //         <div>
+      //           <div className='home-text'>
+      //             Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+      //           </div>
+      //           <br />
+      //           <button className='button' id='button3' onClick={(e) => this.handleClick(e)}>Login</button>
+      //         </div>
+      //       </form>
+      //       {this.state.message && <div className="info info-danger">
+      //         {this.state.message}
+      //       </div>}
+      //     </div>
+      //   </div>
+      // </div >
+
+
+      <div class="container-fluid home-bg">
+        <div class="row home-center">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
               </div>
-              <br />
-              <div>
-                <div className='home-text'>
-                  Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2 className='home-text'>Login</h2>
+                    <form>
+                      <div className='home-text'>
+                        Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+                      </div>
+                      <br />
+                      <div>
+                        <div className='home-text'>
+                          Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                        </div>
+                        <br />
+                        <button className='button' id='button3' onClick={(e) => this.handleClick(e)}>Login</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <br />
-                <button className='button' id='button3' onClick={(e) => this.handleClick(e)}>Login</button>
               </div>
-            </form>
-            {this.state.message && <div className="info info-danger">
-              {this.state.message}
-            </div>}
+              <div class="col-md-4">
+              </div>
+            </div>
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }

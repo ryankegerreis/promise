@@ -1,7 +1,8 @@
 import axios from 'axios'
-
+const baseURL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api'
+export { baseURL }
 const service = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api',
+  baseURL: baseURL,
   withCredentials: true
 })
 
@@ -136,11 +137,18 @@ export default {
       .catch(errHandler)
   },
 
-
-  deleteGoal() {
+  deleteGoal(id) {
     return service
-      .delete('/deletegoal')
+      .delete(`/deletegoal/${id}`)
       .then(res => res.data)
       .catch(errHandler)
   }
+
 }
+
+// Axios.post(`${baseURL}/deletegoal/${id}`, { id: id }).then(responseFromServer => {
+//   console.log(responseFromServer)
+//   let newGoals = [...this.state.goals]
+//   newGoals.splice(i, 1)
+//   this.setState({ goals: newGoals })
+// })

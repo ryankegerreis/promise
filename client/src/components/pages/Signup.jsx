@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import api from '../../api';
 
 export default class Signup extends Component {
@@ -36,29 +36,48 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup page">
-        <div className='signup-box home-text'>
-          <h2 className='align-stuff'>Sign Up</h2>
-          <form>
-            <div className>
-              Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+      <Fragment>
+
+        <div class="container-fluid home-bg">
+          <div class="row home-center">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h2 className='align-stuff'>Sign Up</h2>
+                      <form>
+                        <div className>
+                          Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
+                        </div>
+                        <br />
+                        <div>
+                          Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} />
+                        </div>
+                        <br />
+                        <div>
+                          Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                        </div>
+                        <br />
+                        <button className='button align-stuff' id='button4' onClick={(e) => this.handleClick(e)}>Signup</button>
+                      </form>
+                      {this.state.message && <div className="info info-danger">
+                        {this.state.message}
+                      </div>}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+              </div>
             </div>
-            <br />
-            <div>
-              Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} />
-            </div>
-            <br />
-            <div>
-              Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
-            </div>
-            <br />
-            <button className='button align-stuff' id='button4' onClick={(e) => this.handleClick(e)}>Signup</button>
-          </form>
-          {this.state.message && <div className="info info-danger">
-            {this.state.message}
-          </div>}
+          </div>
         </div>
-      </div>
+
+      </Fragment>
+
     );
   }
 }

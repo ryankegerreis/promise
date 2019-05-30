@@ -1,7 +1,6 @@
 const express = require('express');
 const Goal = require('../models/Goal')
 const Comment = require('../models/Comment')
-
 const { isLoggedIn } = require('../middlewares')
 const router = express.Router();
 
@@ -48,13 +47,14 @@ router.post('/savegoal', isLoggedIn, (req, res, next) => {
 
 
 //Delete a Goal
-router.get('/deletegoal/:id', isLoggedIn, (req, res, next) => {
-  Goal.findByIdAndDelete(req.params.id)
-    .then(goal => {
-      res.json(goal);
-    })
-    .catch(err => next(err))
-});
+// router.get('/deletegoal/:id', isLoggedIn, (req, res, next) => {
+//   console.log(req.params.id)
+//   Goal.findByIdAndDelete(req.params.id)
+//     .then(goal => {
+//       res.json(goal);
+//     })
+//     .catch(err => next(err))
+// });
 
 router.delete('/deletegoal/:id', isLoggedIn, (req, res, next) => {
   Goal.findByIdAndRemove({ _id: req.params.id })
@@ -71,7 +71,8 @@ router.post('/savecomment/:goalId', isLoggedIn, (req, res, next) => {
   comment.goalId = req.params.goalId;
   Comment.create(comment).then(commentFromDb => {
     res.json(commentFromDb);
-  }).catch(err => console.log(err))
+  })
+    .catch(err => console.log(err))
 })
 
 //Get Comments

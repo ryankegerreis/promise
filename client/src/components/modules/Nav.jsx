@@ -26,12 +26,6 @@ export default class Nav extends Component {
               <div className='nav-item p-2' onClick={this.handleLogoutClick}><Link className='nav-text' to='/'>Log Out</Link></div>
               : ""}</li>
           </ul>
-
-          {/* {api.isLoggedIn() ?
-            <button className='nav-item p-2' onClick={this.handleLogoutClick}><a href='/'>Log Out</a></button>
-            : ""
-          } */}
-
         </nav>
       </Fragment >
     )

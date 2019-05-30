@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import api from '../../api';
 import Axios from 'axios'
+import { baseURL } from '../../api'
 
 export default class MyGoals extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export default class MyGoals extends Component {
   componentDidMount() {
     api.getMyGoals()
       .then(goalzz => {
-        // console.log(goalzz)
         this.setState({
           goals: goalzz
         })
@@ -22,34 +22,52 @@ export default class MyGoals extends Component {
 
   showTheGoals = () => {
     return this.state.goals.map((aGoal, i) => {
-      return <div key={aGoal._id} className='card'>
+      return <div key={aGoal._id} id='card'>
         <h3 className='card-title'>{aGoal.name}</h3>
         <h4 className='card-subtitle'>Partnered with: {aGoal.partner}</h4>
         <h5 className='card-text'>Description: {aGoal.description}</h5>
-        <h6 className='card-text'>Date Created: {aGoal.date}</h6>
+        <h6 className='card-text'>Due Date: {aGoal.date}</h6>
         <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn btn-primary" >Delete</button>
       </div>
     })
   }
 
+  // 'http://localhost:5000/api/mygoals/deleteGoal'
+
   deleteGoal = (id, i) => {
-    console.log(id)
-    Axios.post('http://localhost:5000/api/mygoals/deleteGoal', { id: id }).then(responseFromServer => {
-      // console.log(responseFromServer)
-      let newGoals = [...this.state.goals]
-      this.state.goals.splice(i, 1)
-      this.setState({ goals: newGoals })
-    })
+    console.log(id);
+    api.deleteGoal(id)
+      .then(result => {
+        console.log('delete', result)
+        let newGoals = [...this.state.goals]
+        newGoals.splice(i, 1)
+        this.setState({ goals: newGoals })
+      })
   }
 
 
   render() {
     return (
-      <Fragment>
-        <h2>My Goals</h2>
-        <div className='card-deck'>
-          {this.showTheGoals()}
+      <Fragment className='wrap'>
+
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="col-md-12">
+                  <h2 className='pad'>Welcome</h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12 card-deck">
+                  {this.showTheGoals()}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
       </Fragment >
     );
   }
