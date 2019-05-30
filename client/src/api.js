@@ -137,6 +137,13 @@ export default {
       .catch(errHandler)
   },
 
+  editGoal(id) {
+    return service
+      .post(`/editgoal/`, id)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
   deleteGoal(id) {
     return service
       .delete(`/deletegoal/${id}`)
@@ -144,11 +151,5 @@ export default {
       .catch(errHandler)
   },
 
-  editGoal(id) {
-    return service
-      .post(`/editgoal/${id}`)
-      .then(res => res.data)
-      .catch(errHandler)
-  }
 
 }

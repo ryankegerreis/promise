@@ -34,8 +34,23 @@ router.get('/goaldetails/:id', isLoggedIn, (req, res, next) => {
 
 // Route to add a goal
 router.post('/savegoal', isLoggedIn, (req, res, next) => {
+  console.log('zebra')
   let { name, partner, date, description } = req.body
   Goal.create({ name, partner, date, description, owner: req.user._id })
+    .then(goalsFromDB => {
+      res.json({
+        Goal: 'Added',
+        goalsFromDB
+      });
+    })
+    .catch(err => next(err))
+});
+
+router.post('/editgoal', isLoggedIn, (req, res, next) => {
+  console.log('zebra')
+  console.log(req.params, req.body, req.query)
+  let { name, partner, date, description } = req.body
+  Goal.findByIdAndUpdate(req.body._id, { name, partner, date, description, owner: req.user._id })
     .then(goalsFromDB => {
       res.json({
         Goal: 'Added',
@@ -60,7 +75,7 @@ router.post('/editgoal', isLoggedIn, (req, res, next) => {
   Goal.post({ name, partner, date, description, owner: req.user._id })
     .then(goalsFromDB => {
       res.json({
-        Goal: 'Added',
+        Goal: 'Updated',
         goalsFromDB
       });
     })

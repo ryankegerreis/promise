@@ -11,15 +11,33 @@ export default class EditGoal extends Component {
       partner: "",
       description: "",
       date: null,
-      goals: [],
+      goalzz: {},
     }
     this.handleInputChange = this.handleInputChange.bind(this)
+  }
+
+
+  componentDidMount() {
+    console.log(this.props.match.params.id)
+    console.log(this)
+    api.getTheGoal(this.props.match.params.id)
+      .then(goalzz => {
+        console.log(goalzz)
+        let { name, partner, date, description, _id } = goalzz
+        this.setState({
+          name, partner, date, description, _id
+        })
+        console.log(this)
+        console.log(this.state.goalzz.name)
+      })
+      .catch(err => console.log(err))
   }
 
   handleInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     })
+    // console.log(event.target.value)
   }
 
   handleClick(e) {
@@ -29,27 +47,16 @@ export default class EditGoal extends Component {
       partner: this.state.partner,
       date: this.state.date,
       description: this.state.description,
+      _id: this.state._id
     }
-    api.saveGoal(theGoal)
-    this.props.history.push("/mygoals") // Redirect to the home page
-  }
-
-
-  editGoal = (id, i) => {
-    console.log(id);
-    api.editGoal(id)
-      .then(result => {
-        console.log('edit', result)
-        let newGoals = [...this.state.goals]
-        newGoals.splice(i, 1)
-        this.setState({ goals: newGoals })
-      })
+    api.editGoal(theGoal).then(result => {
+      this.props.history.push("/mygoals") // Redirect to the home page
+    }).catch(err => console.log(err))
   }
 
   render() {
     return (
-      <Fragment className="page home-bg">
-
+      <Fragment>
         <div class="container-fluid home-bg">
           <div class="row newgoal-center">
             <div class="col-md-12">
@@ -66,7 +73,8 @@ export default class EditGoal extends Component {
                         </div>
                         <br />
                         <div>
-                          Partner: <input type="text" value={this.state.partner} name="partner" onChange={this.handleInputChange} />
+                          Partner: <input type="text" value={this.state.partner}
+                            name="partner" onChange={this.handleInputChange} />
                         </div>
                         <br />
                         <div>
@@ -78,7 +86,7 @@ export default class EditGoal extends Component {
                         </div>
                         <br />
                         <div>
-                          <button className='button marker' id='button5' onClick={(e) => this.handleClick(e)}>Add A Goal</button>
+                          <button className='button marker' id='button5' onClick={(e) => this.handleClick(e)}>Update Goal</button>
                         </div>
                       </form>
                       {this.state.message && <div className="info">

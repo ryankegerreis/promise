@@ -10,6 +10,7 @@ export default class MyGoals extends Component {
       goals: []
     }
   }
+
   componentDidMount() {
     api.getMyGoals()
       .then(goalzz => {
@@ -28,7 +29,7 @@ export default class MyGoals extends Component {
             <h3 className='card-title caveat'>{aGoal.name}</h3>
             <h4 className='card-subtitle caveat'>Partnered with: {aGoal.partner}</h4>
             <h5 className='card-text caveat'>Description: {aGoal.description}</h5>
-            <h6 className='card-text caveat'>Due Date: {aGoal.date}</h6>
+            <h6 className='card-text caveat'>Due Date: {aGoal.date.slice(0, 10)}</h6>
           </div>
         </div>
         <div className='row'>
@@ -36,7 +37,7 @@ export default class MyGoals extends Component {
             <button className="btn-primary wideload marker rounded-lg" ><Link className='white-text' to={`/goaldetails/${aGoal._id}`}> Details</Link></button>
           </div>
           <div className='col-md-4'>
-            <button className="btn-success wideload marker rounded-lg" ><Link className='white-text' to={'/editgoal/:id'}> Update</Link></button>
+            <button onClick={() => this.editGoal(aGoal._id, i)} className="btn-success wideload marker rounded-lg" ><Link className='white-text' to={`/editgoal/${aGoal._id}`}>Update</Link></button>
           </div>
           <div className='col-md-4 marker'>
             <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn-danger wideload rounded-lg"  >Delete</button>
@@ -44,6 +45,17 @@ export default class MyGoals extends Component {
         </div>
       </div>
     })
+  }
+
+  editGoal = (id, i) => {
+    console.log(id);
+    api.editGoal(id)
+      .then(result => {
+        console.log('edit', result)
+        let newGoals = [...this.state.goals]
+        newGoals.splice(i, 1)
+        this.setState({ goals: newGoals })
+      })
   }
 
   deleteGoal = (id, i) => {
@@ -85,7 +97,6 @@ export default class MyGoals extends Component {
             </div>
           </div>
         </div>
-
 
       </Fragment >
     );

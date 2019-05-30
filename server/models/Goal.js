@@ -16,6 +16,7 @@ const GoalSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
+    require: true,
   },
   commentId: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   users: [{ type: String }]
