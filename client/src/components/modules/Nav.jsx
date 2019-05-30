@@ -15,14 +15,13 @@ export default class Nav extends Component {
       <Fragment className='nav-fix nav-text'>
         <nav className='navbar navbar-expand-lg fixed-top nav-fix'>
           <ul className='navbar-nav'>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/'}>Home</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/login'}>Log In</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/signup'}>Sign Up</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/dashboard'}>Dashboard</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/browse'}>Browse</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/mygoals'}>My Goals</Link></li>
-            <li className='nav-item p-2'><Link className='nav-text' to={'/newgoal'}>New Goal</Link></li>
-            <li className='nav-item p-2'>{api.isLoggedIn() ?
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/'}>Home</Link></li>
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/login'}>Log In</Link></li>
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/signup'}>Sign Up</Link></li>
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/browse'}>Browse</Link></li>
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/mygoals'}>My Goals</Link></li>
+            <li className='nav-item p-2 marker'><Link className='nav-text' to={'/newgoal'}>New Goal</Link></li>
+            <li className='nav-item p-2 marker'>{api.isLoggedIn() ?
               <div className='nav-item p-2' onClick={this.handleLogoutClick}><Link className='nav-text' to='/'>Log Out</Link></div>
               : ""}</li>
           </ul>

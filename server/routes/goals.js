@@ -46,20 +46,23 @@ router.post('/savegoal', isLoggedIn, (req, res, next) => {
 });
 
 
-//Delete a Goal
-// router.get('/deletegoal/:id', isLoggedIn, (req, res, next) => {
-//   console.log(req.params.id)
-//   Goal.findByIdAndDelete(req.params.id)
-//     .then(goal => {
-//       res.json(goal);
-//     })
-//     .catch(err => next(err))
-// });
-
 router.delete('/deletegoal/:id', isLoggedIn, (req, res, next) => {
   Goal.findByIdAndRemove({ _id: req.params.id })
     .then(goal => {
       res.json(goal);
+    })
+    .catch(err => next(err))
+});
+
+//Edit a goal
+router.post('/editgoal', isLoggedIn, (req, res, next) => {
+  let { name, partner, date, description } = req.body
+  Goal.post({ name, partner, date, description, owner: req.user._id })
+    .then(goalsFromDB => {
+      res.json({
+        Goal: 'Added',
+        goalsFromDB
+      });
     })
     .catch(err => next(err))
 });

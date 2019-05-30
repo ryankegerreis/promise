@@ -142,13 +142,13 @@ export default {
       .delete(`/deletegoal/${id}`)
       .then(res => res.data)
       .catch(errHandler)
+  },
+
+  editGoal(id) {
+    return service
+      .post(`/editgoal/${id}`)
+      .then(res => res.data)
+      .catch(errHandler)
   }
 
 }
-
-// Axios.post(`${baseURL}/deletegoal/${id}`, { id: id }).then(responseFromServer => {
-//   console.log(responseFromServer)
-//   let newGoals = [...this.state.goals]
-//   newGoals.splice(i, 1)
-//   this.setState({ goals: newGoals })
-// })

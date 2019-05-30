@@ -47,21 +47,21 @@ export default class Signup extends Component {
                 <div class="col-md-4">
                   <div class="row">
                     <div class="col-md-12">
-                      <h2 className='align-stuff'>Sign Up</h2>
+                      <h2 className='align-stuff marker'>Sign Up</h2>
                       <form>
-                        <div className>
+                        <div className='caveat'>
                           Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} />
                         </div>
                         <br />
-                        <div>
+                        <div className='caveat'>
                           Name: <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} />
                         </div>
                         <br />
-                        <div>
+                        <div className='caveat'>
                           Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
                         </div>
                         <br />
-                        <button className='button align-stuff' id='button4' onClick={(e) => this.handleClick(e)}>Signup</button>
+                        <button className='button align-stuff marker' id='button4' onClick={(e) => this.handleClick(e)}>Signup</button>
                       </form>
                       {this.state.message && <div className="info info-danger">
                         {this.state.message}

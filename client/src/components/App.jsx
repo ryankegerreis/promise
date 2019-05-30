@@ -11,6 +11,7 @@ import Dash from './pages/userdash'
 import MyGoals from './pages/mygoals'
 import GoalID from './pages/goalid'
 import NewGoal from './pages/NewGoal'
+import EditGoal from './pages/EditGoal'
 
 
 export default class App extends Component {
@@ -44,6 +45,7 @@ export default class App extends Component {
           <Route path="/browse" component={Browse} />
           <Route path="/mygoals" component={MyGoals} />
           <Route path="/newgoal" component={NewGoal} />
+          <Route path="/editgoal/:id" component={EditGoal} />
           <Route path="/goaldetails/:id" component={GoalID} />
           <Route render={() => <h2>404</h2>} />
         </Switch>

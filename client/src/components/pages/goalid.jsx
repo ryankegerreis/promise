@@ -28,7 +28,7 @@ export default class GoalID extends Component {
 
   showAGoal = () => {
     return (
-      <div className='card'>
+      <div className='card caveat'>
         <h3 className='card-title'>{this.state.goalzz.name}</h3>
         <h4 className='card-subtitle'>Partnered with: {this.state.goalzz.partner}</h4>
         <h5 className='card-text'>Description: {this.state.goalzz.description}</h5>
@@ -53,10 +53,10 @@ export default class GoalID extends Component {
   render() {
     return (
       <Fragment>
-        <div>
+        <div className='pad goal-center'>
           {this.showAGoal()}
           <Comment {...this.props} />
-          <button>Join This Goal</button>
+          {/* <button >Join This Goal</button> */}
         </div >
       </Fragment>
     )

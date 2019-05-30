@@ -86,6 +86,15 @@ body {
   height:100vh;
 }
 
+.goal-center{
+  text-align: center;
+}
+
+body{
+  background-image: url('./images/white\ background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 #button1,#button2 {
   display: inline-block;
@@ -97,8 +106,23 @@ body {
   margin-top:3%;
 }
 
+.wideload{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
 #button-container{
   text-align:center;
+}
+
+/* Fonts */
+.marker{
+font-family: 'Permanent Marker', cursive;
+}
+
+.caveat{
+font-family: 'Caveat', cursive;
 }
 
 .home-text{
@@ -161,6 +185,10 @@ input[type=date] {
   border: none;
 }
 
+.white-text{
+  color:white;
+}
+
 #button3 {
 width:20%;
 margin:2%
@@ -199,7 +227,7 @@ margin:2%
   background-color:#00B3B3;
 }
 
-#card {
+#card,#card2 {
   flex: 0 1 auto !important;
   margin: 10px;
 }

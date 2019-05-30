@@ -3,14 +3,15 @@ import api from '../../api';
 import Axios from 'axios';
 Axios.defaults.withCredentials = true;
 
-export default class NewGoal extends Component {
+export default class EditGoal extends Component {
   constructor(props) {
     super(props)
     this.state = {
       name: "",
       partner: "",
       description: "",
-      date: null
+      date: null,
+      goals: [],
     }
     this.handleInputChange = this.handleInputChange.bind(this)
   }
@@ -31,7 +32,18 @@ export default class NewGoal extends Component {
     }
     api.saveGoal(theGoal)
     this.props.history.push("/mygoals") // Redirect to the home page
+  }
 
+
+  editGoal = (id, i) => {
+    console.log(id);
+    api.editGoal(id)
+      .then(result => {
+        console.log('edit', result)
+        let newGoals = [...this.state.goals]
+        newGoals.splice(i, 1)
+        this.setState({ goals: newGoals })
+      })
   }
 
   render() {
