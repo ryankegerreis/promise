@@ -34,13 +34,16 @@ export default class MyGoals extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-4'>
-            <button className="btn-primary wideload marker rounded-lg" ><Link className='white-text' to={`/goaldetails/${aGoal._id}`}> Details</Link></button>
+          <div className='col-md-3 marker'>
+            <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn-success wideload rounded-lg"  >Complete</button>
           </div>
-          <div className='col-md-4'>
-            <button onClick={() => this.editGoal(aGoal._id, i)} className="btn-success wideload marker rounded-lg" ><Link className='white-text' to={`/editgoal/${aGoal._id}`}>Update</Link></button>
+          <div className='col-md-3'>
+            <button className="btn-primary wideload marker rounded-lg" ><Link className='white-text' to={`/goaldetails/${aGoal._id}`}>Details</Link></button>
           </div>
-          <div className='col-md-4 marker'>
+          <div className='col-md-3'>
+            <button onClick={() => this.editGoal(aGoal._id, i)} className="btn-warning wideload marker rounded-lg" ><Link className='white-text' to={`/editgoal/${aGoal._id}`}>Update</Link></button>
+          </div>
+          <div className='col-md-3 marker'>
             <button onClick={() => this.deleteGoal(aGoal._id, i)} className="btn-danger wideload rounded-lg"  >Delete</button>
           </div>
         </div>
