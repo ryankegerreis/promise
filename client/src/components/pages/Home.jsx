@@ -14,7 +14,7 @@ export default class Home extends Component {
                 <div class="col-md-12">
                   <div class="row">
                     <div class="col-md-12">
-                      <h4>Promise is a goal tracking app. When you're ready make a promise to someone of your choice, but always keep your promise.</h4>
+                      <h4 className='home-text marker'>Promise is a goal tracking app. When you're ready make a promise to someone of your choice, but always keep your promise.</h4>
                       <br />
                       <h3 className='home-text marker'>Make A Promise To <span></span></h3>
                       <p className='home-text caveat'>Login or Sign Up to make a promise.</p>
