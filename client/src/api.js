@@ -94,13 +94,6 @@ export default {
       .catch(errHandler)
   },
 
-  // getSecret() {
-  //   return service
-  //     .get('/secret')
-  //     .then(res => res.data)
-  //     .catch(errHandler)
-  // },
-
   addPicture(file) {
     const formData = new FormData()
     formData.append("picture", file)

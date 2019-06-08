@@ -32,10 +32,6 @@ export default class App extends Component {
       <div className="pad-app">
         <header>
           <Nav />
-          {/* {api.isLoggedIn() ?
-            <button onClick={this.handleLogoutClick}><a href='/'>Log Out</a></button>
-            : ""
-          } */}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
