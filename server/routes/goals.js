@@ -22,6 +22,13 @@ router.get('/mygoals', isLoggedIn, (req, res, next) => {
     .catch(err => next(err))
 });
 
+//From Stackoverflow
+// app.get('/auth/github/callback',
+//   passport.authenticate('github', { successRedirect: '/', failureRedirect: '/login' }),
+//   function (req, res) {
+//     res.redirect('/');
+//   });
+
 //Route to get the goal by id
 router.get('/goaldetails/:id', isLoggedIn, (req, res, next) => {
   Goal.findById(req.params.id)
